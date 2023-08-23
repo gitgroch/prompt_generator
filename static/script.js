@@ -12,6 +12,7 @@ function generatePrompt() {
     const camera = document.getElementById("camera").value;
     const lenses = document.getElementById("lenses").value;
     const f_stop = document.getElementById("f_stop").value;
+    const film = document.getElementById("film").value;
     const filters_and_effects_1 = document.getElementById("filters_and_effects_1").value;
     const filters_and_effects_2 = document.getElementById("filters_and_effects_2").value;
     const filters_and_effects_3 = document.getElementById("filters_and_effects_3").value;
@@ -30,6 +31,7 @@ function generatePrompt() {
         camera: camera,
         lenses: lenses,
         f_stop: f_stop,
+        film: film,
         filters_and_effects_1: filters_and_effects_1,
         filters_and_effects_2: filters_and_effects_2,
         filters_and_effects_3: filters_and_effects_3,

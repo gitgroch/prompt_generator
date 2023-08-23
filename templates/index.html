@@ -5,56 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Art Prompt Generator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="static/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container mt-5 ">
         <div class="row">
-            
-            <div class="col-md-4 mb-3">
-                <h2>Style of Photo</h2>
-                <select id="style_of_photo" class="form-control">
-                    <!-- Populate with options from your database or list -->
-                    <option value=""></option>
-                    <option value="abstract">Abstract</option>
-                    <option value="analogue">Analogue</option>
-                    <option value="beauty">Beauty</option>
-                    <option value="candid">Candid</option>
-                    <option value="documentary_photography">Documentary Photography</option>
-                    <option value="glamour photography">Glamour Photography</option>
-                    <option value="high fashion photography">High Fashion Photography</option>
-                    <option value="instant photo">Instant Photo</option>
-                    <option value="large format">Large Format</option>
-                    <option value="lifestyle photography">Lifestyle Photography</option>
-                    <option value="modernist">Modernist</option>
-                    <option value="paparazzi">Paparazzi</option>
-                    <option value="pictorialist style">Pictorialist Style</option>
-                    <option value="polaroid">Polaroid</option>
-                    <option value="pinhole photography">Pinhole Photography</option>
-                    <option value="street fashion photography">Street Fashion Photography</option>
-                    <option value="surrealist">Surrealist</option>
-                    <option value="tintype">Tintype</option>
-                    <option value="street photography">Street Photography</option>
+            <h1 class="text-center fs-1 ">PromptGeek's AI Art Prompt Generator</h1>
+            <div class="col-md-4 mb-3 ">
+                <h2 class="fs-4">Info:</h2>
+                <p class="fs-6">This prompt generator is based on PromptGeeks ebook "Creating Photorealistic Images With
+                    AI". This is a silly little project, but his book is not silly at all, please check it out and
+                    support PromptGeek for his incredible work. </p>
+                <p class="fs-6"> I made this with help from chatGPT (but not the CSS, AI sucks at CSS) for a YouTube video, you can check that out <a href="https://www.youtube.com/channel/UCw1mnmCAq2rWLAWn7CrNO5g">here.</a>
 
-                    <!-- ... other options ... -->
-                </select>
+                </p>
             </div>
-            
+            <div class="col-md-4 mb-3 ">
+                <h2 class="fs-4">How to Use:</h2>
+                <p>1. Select an option for each field provided, or don't, it's up to you</p>
+                <p>2. Click Generate Prompt</p>
+                <p>3. Copy the prompt into your chosen art generator</p>
+            </div>
+            <div class="col-md-4 mb-3 ">
+                <h2>Links:</h2>
+                <p>
+                    <a href="https://promptgeek.gumroad.com/l/photoreal?layout=profile">Get PromptGeek's Book on
+                        Gumroad</a>
+                </p>
+                <p>
+                    <a href="https://youtu.be/z-AoELaJfn0?si=Dx92AXU7i1rNrntD">See PromptGeek's Video Tutorial</a>
+                </p>
+                <p>
+                    <a href="https://www.youtube.com/channel/UCw1mnmCAq2rWLAWn7CrNO5g">Check out my YouTube Channel -
+                        Incite AI</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-5">
+
+        <div class="row">
+
             <div class="col-md-4 mb-3">
                 <h2>Subject</h2>
-                <textarea id="subject" class="form-control"></textarea>
+                <textarea id="subject" class="form-control">A beautiful Irish woman</textarea>
             </div>
             <div class="col-md-4 mb-3">
                 <h2>Important Feature</h2>
-                <textarea id="important_feature" class="form-control"></textarea>
+                <textarea id="important_feature"
+                    class="form-control">long red curly hair, wearing a green flowing gown</textarea>
             </div>
             <div class="col-md-4 mb-3">
                 <h2>More Details</h2>
-                <textarea id="more_details" class="form-control"></textarea>
+                <textarea id="more_details" class="form-control">looking pensively at the camera</textarea>
             </div>
             <div class="col-md-4 mb-3">
                 <h2>Pose / Action</h2>
@@ -62,7 +76,7 @@
                     <option value=""></option>
                     <option value="seated">seated</option>
                     <option value="standing">standing</option>
-                    <option value="walking">walking</option>
+                    <option value="walking" selected>walking</option>
                     <option value="running">running</option>
                     <option value="jumping">jumping</option>
                     <option value="dancing">dancing</option>
@@ -72,21 +86,22 @@
                     <option value="interacting">interacting</option>
                 </select>
             </div>
-            
+
             <div class="col-md-4 mb-3">
                 <h2>Framing</h2>
                 <select id="framing" class="form-control">
                     <option value=""></option>
                     <option value="close up on face">close up on face</option>
-                    <option value="full body">full body</option>
+                    <option value="full body" selected>full body</option>
                     <option value="head shot">head shot</option>
                     <option value="upper body">upper body</option>
                 </select>
             </div>
-            
+
             <div class="col-md-4 mb-3">
                 <h2>Setting / Background</h2>
-                <textarea id="setting_background" class="form-control"></textarea>
+                <textarea id="setting_background"
+                    class="form-control">on the rocky edge of a cliff overlooking a misty forested valley at dawn</textarea>
             </div>
             <div class="col-md-4 mb-3">
                 <h2>Lighting</h2>
@@ -95,7 +110,7 @@
                     <option value="bounced lighting">bounced lighting</option>
                     <option value="candlelight">candlelight</option>
                     <option value="chiaroscuro">chiaroscuro</option>
-                    <option value="cinematic lighting">cinematic lighting</option>
+                    <option value="cinematic lighting" selected>cinematic lighting</option>
                     <option value="soft diffused lighting">soft diffused lighting</option>
                     <option value="edge lighting">edge lighting</option>
                     <option value="fill lighting">fill lighting</option>
@@ -114,18 +129,18 @@
                     <option value="soft lighting">soft lighting</option>
                 </select>
             </div>
-            
+
             <div class="col-md-4 mb-3">
                 <h2>Camera Angle</h2>
                 <select id="camera_angle" class="form-control">
                     <option value=""></option>
-                    <option value="from above/high angle">from above/high angle</option>
+                    <option value="from above/high angle" selected>from above/high angle</option>
                     <option value="from below/low angle">from below/low angle</option>
                     <option value="eye level">eye level</option>
                     <option value="dutch angle">dutch angle</option>
                 </select>
             </div>
-            
+
             <div class="col-md-4 mb-3">
                 <h2>Camera</h2>
                 <select id="camera" class="form-control">
@@ -139,7 +154,7 @@
 
                     <optgroup label="Digital Cameras">
                         <option value="Canon EOS 5D">Canon EOS 5D</option>
-                        <option value="Fujifilm X-T4">Fujifilm X-T4</option>
+                        <option value="Fujifilm X-T4" selected>Fujifilm X-T4</option>
                         <option value="GoPro Hero">GoPro Hero</option>
                         <option value="Hasselblad X1D II">Hasselblad X1D II</option>
                         <option value="Lumix GH5">Lumix GH5</option>
@@ -160,24 +175,24 @@
                     </optgroup>
                 </select>
             </div>
-            
+
             <div class="col-md-4 mb-3">
                 <h2>Lens</h2>
                 <select id="lenses" class="form-control">
                     <option value=""></option>
                     <option value="8mm Fisheye Lens">8mm Fisheye Lens</option>
-                    <option value="14mm">14mm Lens</option>
-                    <option value="18mm">18mm Lens</option>
-                    <option value="24mm">24mm Lens</option>
-                    <option value="28mm">28mm Lens</option>
-                    <option value="35mm">35mm Lens</option>
-                    <option value="50mm">50mm Lens</option>
-                    <option value="85mm">85mm Lens</option>
-                    <option value="105mm">105mm Lens</option>
-                    <option value="135mm">135mm Lens</option>
+                    <option value="14mm Lens">14mm Lens</option>
+                    <option value="18mm Lens">18mm Lens</option>
+                    <option value="24mm Lens">24mm Lens</option>
+                    <option value="28mm Lens">28mm Lens</option>
+                    <option value="35mm Lens">35mm Lens</option>
+                    <option value="50mm Lens">50mm Lens</option>
+                    <option value="85mm Lens">85mm Lens</option>
+                    <option value="105mm Lens">105mm Lens</option>
+                    <option value="135mm Lens">135mm Lens</option>
                 </select>
             </div>
-            
+
             <div class="col-md-4 mb-3">
                 <h2>F Stop</h2>
                 <select id="f_stop" class="form-control">
@@ -194,7 +209,47 @@
                     <option value="f/32">f/32</option>
                 </select>
             </div>
-            
+
+            <div class="col-md-4 mb-3">
+                <h2>Film Type</h2>
+                <select id="film" class="form-control">
+                    <option value=""></option>
+                    <option value="Agfa Vista">Agfa Vista</option>
+                    <option value="Cinestill 800T">Cinestill 800T</option>
+                    <option value="Ektar 100">Ektar 100</option>
+                    <option value="Film Grain">Film Grain</option>
+                    <option value="Ilford HP5 Plus">Ilford HP5 Plus</option>
+                    <option value="Kodak Vision3">Kodak Vision3</option>
+                    <option value="Kodak Vision3 IMAX">Kodak Vision3 IMAX</option>
+                    <option value="Lomochrome Color Film">Lomochrome Color Film</option>
+                    <option value="Porta 160">Porta 160</option>
+                    <option value="Tri-X 400">Tri-X 400</option>
+                    <option value="Velvia 100">Velvia 100</option>
+                    <option value="Fujicolor Pro">Fujicolor Pro</option>
+                    <option value="Kodak Gold 200">Kodak Gold 200</option>
+                    <option value="Fujifilm Superia 400">Fujifilm Superia 400</option>
+                    <option value="Kodak T-MAX 400">Kodak T-MAX 400</option>
+                    <option value="Ilford Delta 3200">Ilford Delta 3200</option>
+                    <option value="Fujifilm Provia 100F">Fujifilm Provia 100F</option>
+                    <option value="Kodak Ektachrome E100">Kodak Ektachrome E100</option>
+                    <option value="Ilford FP4 Plus">Ilford FP4 Plus</option>
+                    <option value="Fujifilm Neopan 400">Fujifilm Neopan 400</option>
+                    <option value="Kodak Portra 400">Kodak Portra 400</option>
+                    <option value="Ilford PAN F Plus 50">Ilford PAN F Plus 50</option>
+                    <option value="Kodak Ultramax 400">Kodak Ultramax 400</option>
+                    <option value="Fujifilm Acros 100">Fujifilm Acros 100</option>
+                    <option value="Kodak ColorPlus 200">Kodak ColorPlus 200</option>
+                    <option value="Ilford XP2 Super">Ilford XP2 Super</option>
+                    <option value="Fujifilm Velvia 50">Fujifilm Velvia 50</option>
+                    <option value="Kodak Tri-X Pan">Kodak Tri-X Pan</option>
+                    <option value="Agfa APX 400">Agfa APX 400</option>
+                    <option value="Fujifilm Pro 400H">Fujifilm Pro 400H</option>
+                    <option value="Kodak Ektachrome 64T">Kodak Ektachrome 64T</option>
+                    <option value="Ilford SFX 200">Ilford SFX 200</option>
+
+                </select>
+            </div>
+
             <div class="col-md-4 mb-3">
                 <h2>Filters and Effects 1</h2>
                 <select id="filters_and_effects_1" class="form-control">
@@ -203,7 +258,7 @@
                     <option value="infrared filter">infrared filter</option>
                     <option value="lens flare">lens flare</option>
                     <option value="sepia tone">sepia tone</option>
-                    <option value="soft focus">soft focus</option>
+                    <option value="soft focus" selected>soft focus</option>
                     <option value="solarized">solarized</option>
                     <option value="long exposure">long exposure</option>
                     <option value="ND filter">ND filter</option>
@@ -213,7 +268,7 @@
                     <option value="vignette">vignette</option>
                 </select>
             </div>
-            
+
             <div class="col-md-4 mb-3">
                 <h2>Filters and Effects 2</h2>
                 <select id="filters_and_effects_2" class="form-control">
@@ -233,7 +288,7 @@
 
                 </select>
             </div>
-            
+
             <div class="col-md-4 mb-3">
                 <h2>Filters and Effects 3</h2>
                 <select id="filters_and_effects_3" class="form-control">
@@ -252,7 +307,7 @@
                     <option value="vignette">vignette</option>
                 </select>
             </div>
-            
+
             <div class="col-md-4 mb-3">
                 <h2>Photographer</h2>
                 <select id="photographer" class="form-control">
@@ -307,7 +362,7 @@
                         <option value="Mario Testino">Mario Testino</option>
                         <option value="Sally Mann">Sally Mann</option>
                         <option value="Elliott Erwitt">Elliott Erwitt</option>
-                        <option value="Steve McCurry">Steve McCurry</option>
+                        <option value="Steve McCurry" selected>Steve McCurry</option>
                         <option value="Sebastião Salgado">Sebastião Salgado</option>
                         <option value="Andreas Gursky">Andreas Gursky</option>
                         <option value="Robert Mapplethorpe">Robert Mapplethorpe</option>
@@ -340,18 +395,19 @@
                     </optgroup>
                 </select>
             </div>
-            
+
             <div class="row mt-3">
                 <div class="col-12">
                     <button onclick="generatePrompt()" class="btn btn-primary mb-3">Generate Prompt</button>
                     <textarea id="promptOutput" class="form-control"></textarea>
+                    <button onclick="copyToClipboard()" class="btn btn-secondary mb-3 ml-2">Copy Prompt</button>
                 </div>
-                <button onclick="copyToClipboard()" class="btn btn-secondary mb-3 ml-2">Copy Prompt</button>
+
 
             </div>
         </div>
     </div>
-        <script src="static/script.js"></script>
-    </body>
-    
-    </html>
+    <script src="static/script.js"></script>
+</body>
+
+</html>

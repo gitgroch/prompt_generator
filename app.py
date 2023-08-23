@@ -20,12 +20,14 @@ def generate_prompt():
         data['setting_background'],
         data['lighting'],
         data['camera_angle'],
-        data['camera'],
-        f"{data['lenses']} {data['f_stop']}",
+        data['camera'], 
+        data['lenses'],
+        data['f_stop'],
+        data['film'],
         data['filters_and_effects_1'],
         data['filters_and_effects_2'],
         data['filters_and_effects_3'],
-        f"in style of {data['photographer']}"
+        f"in the style of {data['photographer']}"
     ]
 
     # Joining the parts with a comma, but only if they are not blank
