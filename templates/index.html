@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Art Prompt Generator</title>
     <link rel="stylesheet" href="static/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
         <h2>Style of Photo</h2>
-        <select id="style_of_photo">
+        <select id="style_of_photo" class="form-control mb-3">
             <!-- Populate with options from your database or list -->
             <option value=""></option>
             <option value="abstract">Abstract</option>
@@ -36,14 +41,16 @@
 
             <!-- ... other options ... -->
         </select>
+    </div>
+    <div class="col-md-6">
         <h2>Subject</h2>
-        <textarea id="subject"></textarea>
+        <textarea id="subject" class="form-control mb-3"></textarea>
         <h2>Important Feature</h2>
-        <textarea id="important_feature"></textarea>
+        <textarea id="important_feature" class="form-control mb-3"></textarea>
         <h2>More Details</h2>
-        <textarea id="more_details"></textarea>
+        <textarea id="more_details" class="form-control mb-3"></textarea>
         <h2>Pose / Action</h2>
-        <select id="pose_or_action">
+        <select id="pose_or_action" class="form-control mb-3">
             <option value=""></option>
             <option value="seated">seated</option>
             <option value="standing">standing</option>
@@ -56,18 +63,22 @@
             <option value="gesturing">gesturing</option>
             <option value="interacting">interacting</option>
         </select>
+    </div>
+    <div class="col-md-6">
         <h2>Framing</h2>
-        <select id="framing">
+        <select id="framing" class="form-control mb-3">
             <option value=""></option>
             <option value="close up on face">close up on face</option>
             <option value="full body">full body</option>
             <option value="head shot">head shot</option>
             <option value="upper body">upper body</option>
         </select>
+    </div>
+    <div class="col-md-6">
         <h2>Setting / Background</h2>
         <textarea id="setting_background"></textarea>
         <h2>Lighting</h2>
-        <select id="lighting">
+        <select id="lighting" class="form-control mb-3">
             <option value=""></option>
             <option value="bounced lighting">bounced lighting</option>
             <option value="candlelight">candlelight</option>
@@ -90,17 +101,20 @@
             <option value="silhouette lighting">silhouette lighting</option>
             <option value="soft lighting">soft lighting</option>
         </select>
+    </div>
+    <div class="col-md-6">
         <h2>Camera Angle</h2>
-        <select id="camera_angle">
+        <select id="camera_angle" class="form-control mb-3">
             <option value=""></option>
             <option value="from above/high angle">from above/high angle</option>
             <option value="from below/low angle">from below/low angle</option>
             <option value="eye level">eye level</option>
             <option value="dutch angle">dutch angle</option>
-
         </select>
+    </div>
+    <div class="col-md-6">
         <h2>Camera</h2>
-        <select id="camera">
+        <select id="camera" class="form-control mb-3">
             <option value=""></option>
             <optgroup label="Cinema Cameras">
                 <option value="Aaton LTR">Aaton LTR</option>
@@ -131,8 +145,10 @@
                 <option value="Polaroid SX-70">Polaroid SX-70</option>
             </optgroup>
         </select>
+    </div>
+    <div class="col-md-6">
         <h2>Lens</h2>
-        <select id="lenses">
+        <select id="lenses" class="form-control mb-3">
             <option value=""></option>
             <option value="8mm Fisheye Lens">8mm Fisheye Lens</option>
             <option value="14mm">14mm Lens</option>
@@ -145,8 +161,10 @@
             <option value="105mm">105mm Lens</option>
             <option value="135mm">135mm Lens</option>
         </select>
+    </div>
+    <div class="col-md-6">
         <h2>F Stop</h2>
-        <select id="f_stop">
+        <select id="f_stop" class="form-control mb-3">
             <option value=""></option>
             <option value="f/1.4">f/1.4</option>
             <option value="f/2">f/2</option>
@@ -159,9 +177,10 @@
             <option value="f/22">f/22</option>
             <option value="f/32">f/32</option>
         </select>
-
+    </div>
+    <div class="col-md-6">
         <h2>Filters and Effects 1</h2>
-        <select id="filters_and_effects_1">
+        <select id="filters_and_effects_1" class="form-control mb-3">
             <option value=""></option>
             <option value="hologram effect">hologram effect</option>
             <option value="infrared filter">infrared filter</option>
@@ -176,8 +195,10 @@
             <option value="underexposed">underexposed</option>
             <option value="vignette">vignette</option>
         </select>
+    </div>
+    <div class="col-md-6">
         <h2>Filters and Effects 2</h2>
-        <select id="filters_and_effects_2">
+        <select id="filters_and_effects_2" class="form-control mb-3">
             <option value=""></option>
             <option value="hologram effect">hologram effect</option>
             <option value="infrared filter">infrared filter</option>
@@ -193,8 +214,10 @@
             <option value="vignette">vignette</option>
 
         </select>
+    </div>
+    <div class="col-md-6">
         <h2>Filters and Effects 3</h2>
-        <select id="filters_and_effects_3">
+        <select id="filters_and_effects_3" class="form-control mb-3">
             <option value=""></option>
             <option value="hologram effect">hologram effect</option>
             <option value="infrared filter">infrared filter</option>
@@ -209,8 +232,10 @@
             <option value="underexposed">underexposed</option>
             <option value="vignette">vignette</option>
         </select>
+    </div>
+    <div class="col-md-6">
         <h2>Photographer</h2>
-        <select id="photographer">
+        <select id="photographer" class="form-control mb-3">
             <option value=""></option>
             <optgroup label="Photographers">
                 <option value="Alberto Seveso">Alberto Seveso</option>
@@ -295,11 +320,11 @@
             </optgroup>
 
         </select>
+    </div>
 
 
-        <button onclick="generatePrompt()">Generate Prompt</button>
-
-        <textarea id="promptOutput"></textarea>
+        <button onclick="generatePrompt()" class="btn btn-primary mb-3">Generate Prompt</button>
+        <textarea id="promptOutput" class="form-control"></textarea>
     </div>
     <script src="static/script.js"></script>
 </body>
