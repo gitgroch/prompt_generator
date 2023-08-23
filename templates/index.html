@@ -5,328 +5,353 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Art Prompt Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="static/styles.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6">
-        <h2>Style of Photo</h2>
-        <select id="style_of_photo" class="form-control mb-3">
-            <!-- Populate with options from your database or list -->
-            <option value=""></option>
-            <option value="abstract">Abstract</option>
-            <option value="analogue">Analogue</option>
-            <option value="beauty">Beauty</option>
-            <option value="candid">Candid</option>
-            <option value="documentary_photography">Documentary Photography</option>
-            <option value="glamour photography">Glamour Photography</option>
-            <option value="high fashion photography">High Fashion Photography</option>
-            <option value="instant photo">Instant Photo</option>
-            <option value="large format">Large Format</option>
-            <option value="lifestyle photography">Lifestyle Photography</option>
-            <option value="modernist">Modernist</option>
-            <option value="paparazzi">Paparazzi</option>
-            <option value="pictorialist style">Pictorialist Style</option>
-            <option value="polaroid">Polaroid</option>
-            <option value="pinhole photography">Pinhole Photography</option>
-            <option value="street fashion photography">Street Fashion Photography</option>
-            <option value="surrealist">Surrealist</option>
-            <option value="tintype">Tintype</option>
-            <option value="street photography">Street Photography</option>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Style of Photo</h2>
+                <select id="style_of_photo" class="form-control">
+                    <!-- Populate with options from your database or list -->
+                    <option value=""></option>
+                    <option value="abstract">Abstract</option>
+                    <option value="analogue">Analogue</option>
+                    <option value="beauty">Beauty</option>
+                    <option value="candid">Candid</option>
+                    <option value="documentary_photography">Documentary Photography</option>
+                    <option value="glamour photography">Glamour Photography</option>
+                    <option value="high fashion photography">High Fashion Photography</option>
+                    <option value="instant photo">Instant Photo</option>
+                    <option value="large format">Large Format</option>
+                    <option value="lifestyle photography">Lifestyle Photography</option>
+                    <option value="modernist">Modernist</option>
+                    <option value="paparazzi">Paparazzi</option>
+                    <option value="pictorialist style">Pictorialist Style</option>
+                    <option value="polaroid">Polaroid</option>
+                    <option value="pinhole photography">Pinhole Photography</option>
+                    <option value="street fashion photography">Street Fashion Photography</option>
+                    <option value="surrealist">Surrealist</option>
+                    <option value="tintype">Tintype</option>
+                    <option value="street photography">Street Photography</option>
 
-            <!-- ... other options ... -->
-        </select>
-    </div>
-    <div class="col-md-6">
-        <h2>Subject</h2>
-        <textarea id="subject" class="form-control mb-3"></textarea>
-        <h2>Important Feature</h2>
-        <textarea id="important_feature" class="form-control mb-3"></textarea>
-        <h2>More Details</h2>
-        <textarea id="more_details" class="form-control mb-3"></textarea>
-        <h2>Pose / Action</h2>
-        <select id="pose_or_action" class="form-control mb-3">
-            <option value=""></option>
-            <option value="seated">seated</option>
-            <option value="standing">standing</option>
-            <option value="walking">walking</option>
-            <option value="running">running</option>
-            <option value="jumping">jumping</option>
-            <option value="dancing">dancing</option>
-            <option value="reclining">reclining</option>
-            <option value="leaning">leaning</option>
-            <option value="gesturing">gesturing</option>
-            <option value="interacting">interacting</option>
-        </select>
-    </div>
-    <div class="col-md-6">
-        <h2>Framing</h2>
-        <select id="framing" class="form-control mb-3">
-            <option value=""></option>
-            <option value="close up on face">close up on face</option>
-            <option value="full body">full body</option>
-            <option value="head shot">head shot</option>
-            <option value="upper body">upper body</option>
-        </select>
-    </div>
-    <div class="col-md-6">
-        <h2>Setting / Background</h2>
-        <textarea id="setting_background"></textarea>
-        <h2>Lighting</h2>
-        <select id="lighting" class="form-control mb-3">
-            <option value=""></option>
-            <option value="bounced lighting">bounced lighting</option>
-            <option value="candlelight">candlelight</option>
-            <option value="chiaroscuro">chiaroscuro</option>
-            <option value="cinematic lighting">cinematic lighting</option>
-            <option value="soft diffused lighting">soft diffused lighting</option>
-            <option value="edge lighting">edge lighting</option>
-            <option value="fill lighting">fill lighting</option>
-            <option value="flash photography">flash photography</option>
-            <option value="god rays">god rays</option>
-            <option value="golden hour">golden hour</option>
-            <option value="hard light">hard light</option>
-            <option value="high key lighting">high key lighting</option>
-            <option value="low key lighting">low key lighting</option>
-            <option value="natural lighting">natural lighting</option>
-            <option value="neon lighting">neon lighting</option>
-            <option value="overcast lighting">overcast lighting</option>
-            <option value="rim lighting">rim lighting</option>
-            <option value="shadow play">shadow play</option>
-            <option value="silhouette lighting">silhouette lighting</option>
-            <option value="soft lighting">soft lighting</option>
-        </select>
-    </div>
-    <div class="col-md-6">
-        <h2>Camera Angle</h2>
-        <select id="camera_angle" class="form-control mb-3">
-            <option value=""></option>
-            <option value="from above/high angle">from above/high angle</option>
-            <option value="from below/low angle">from below/low angle</option>
-            <option value="eye level">eye level</option>
-            <option value="dutch angle">dutch angle</option>
-        </select>
-    </div>
-    <div class="col-md-6">
-        <h2>Camera</h2>
-        <select id="camera" class="form-control mb-3">
-            <option value=""></option>
-            <optgroup label="Cinema Cameras">
-                <option value="Aaton LTR">Aaton LTR</option>
-                <option value="ARRI ALEXA 65">ARRI ALEXA 65</option>
-                <option value="Bolex H16">Bolex H16</option>
-                <option value="RED Digital Cinema Camera">RED Digital Cinema Camera</option>
-            </optgroup>
+                    <!-- ... other options ... -->
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Subject</h2>
+                <textarea id="subject" class="form-control"></textarea>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h2>Important Feature</h2>
+                <textarea id="important_feature" class="form-control"></textarea>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h2>More Details</h2>
+                <textarea id="more_details" class="form-control"></textarea>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h2>Pose / Action</h2>
+                <select id="pose_or_action" class="form-control">
+                    <option value=""></option>
+                    <option value="seated">seated</option>
+                    <option value="standing">standing</option>
+                    <option value="walking">walking</option>
+                    <option value="running">running</option>
+                    <option value="jumping">jumping</option>
+                    <option value="dancing">dancing</option>
+                    <option value="reclining">reclining</option>
+                    <option value="leaning">leaning</option>
+                    <option value="gesturing">gesturing</option>
+                    <option value="interacting">interacting</option>
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Framing</h2>
+                <select id="framing" class="form-control">
+                    <option value=""></option>
+                    <option value="close up on face">close up on face</option>
+                    <option value="full body">full body</option>
+                    <option value="head shot">head shot</option>
+                    <option value="upper body">upper body</option>
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Setting / Background</h2>
+                <textarea id="setting_background" class="form-control"></textarea>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h2>Lighting</h2>
+                <select id="lighting" class="form-control">
+                    <option value=""></option>
+                    <option value="bounced lighting">bounced lighting</option>
+                    <option value="candlelight">candlelight</option>
+                    <option value="chiaroscuro">chiaroscuro</option>
+                    <option value="cinematic lighting">cinematic lighting</option>
+                    <option value="soft diffused lighting">soft diffused lighting</option>
+                    <option value="edge lighting">edge lighting</option>
+                    <option value="fill lighting">fill lighting</option>
+                    <option value="flash photography">flash photography</option>
+                    <option value="god rays">god rays</option>
+                    <option value="golden hour">golden hour</option>
+                    <option value="hard light">hard light</option>
+                    <option value="high key lighting">high key lighting</option>
+                    <option value="low key lighting">low key lighting</option>
+                    <option value="natural lighting">natural lighting</option>
+                    <option value="neon lighting">neon lighting</option>
+                    <option value="overcast lighting">overcast lighting</option>
+                    <option value="rim lighting">rim lighting</option>
+                    <option value="shadow play">shadow play</option>
+                    <option value="silhouette lighting">silhouette lighting</option>
+                    <option value="soft lighting">soft lighting</option>
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Camera Angle</h2>
+                <select id="camera_angle" class="form-control">
+                    <option value=""></option>
+                    <option value="from above/high angle">from above/high angle</option>
+                    <option value="from below/low angle">from below/low angle</option>
+                    <option value="eye level">eye level</option>
+                    <option value="dutch angle">dutch angle</option>
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Camera</h2>
+                <select id="camera" class="form-control">
+                    <option value=""></option>
+                    <optgroup label="Cinema Cameras">
+                        <option value="Aaton LTR">Aaton LTR</option>
+                        <option value="ARRI ALEXA 65">ARRI ALEXA 65</option>
+                        <option value="Bolex H16">Bolex H16</option>
+                        <option value="RED Digital Cinema Camera">RED Digital Cinema Camera</option>
+                    </optgroup>
 
-            <optgroup label="Digital Cameras">
-                <option value="Canon EOS 5D">Canon EOS 5D</option>
-                <option value="Fujifilm X-T4">Fujifilm X-T4</option>
-                <option value="GoPro Hero">GoPro Hero</option>
-                <option value="Hasselblad X1D II">Hasselblad X1D II</option>
-                <option value="Lumix GH5">Lumix GH5</option>
-                <option value="Pentax 645Z">Pentax 645Z</option>
-                <option value="Sony A7III">Sony A7III</option>
-                <option value="Leica T">Leica T</option>
-            </optgroup>
+                    <optgroup label="Digital Cameras">
+                        <option value="Canon EOS 5D">Canon EOS 5D</option>
+                        <option value="Fujifilm X-T4">Fujifilm X-T4</option>
+                        <option value="GoPro Hero">GoPro Hero</option>
+                        <option value="Hasselblad X1D II">Hasselblad X1D II</option>
+                        <option value="Lumix GH5">Lumix GH5</option>
+                        <option value="Pentax 645Z">Pentax 645Z</option>
+                        <option value="Sony A7III">Sony A7III</option>
+                        <option value="Leica T">Leica T</option>
+                    </optgroup>
 
-            <optgroup label="Retro Cameras">
-                <option value="Diana F+">Diana F+</option>
-                <option value="Hasselblad 500CM">Hasselblad 500CM</option>
-                <option value="HOLGA 120n">HOLGA 120n</option>
-                <option value="Kodak Brownie">Kodak Brownie</option>
-                <option value="Kodak Funsaver">Kodak Funsaver</option>
-                <option value="Leica M3">Leica M3</option>
-                <option value="Rolleiflex">Rolleiflex</option>
-                <option value="Polaroid SX-70">Polaroid SX-70</option>
-            </optgroup>
-        </select>
-    </div>
-    <div class="col-md-6">
-        <h2>Lens</h2>
-        <select id="lenses" class="form-control mb-3">
-            <option value=""></option>
-            <option value="8mm Fisheye Lens">8mm Fisheye Lens</option>
-            <option value="14mm">14mm Lens</option>
-            <option value="18mm">18mm Lens</option>
-            <option value="24mm">24mm Lens</option>
-            <option value="28mm">28mm Lens</option>
-            <option value="35mm">35mm Lens</option>
-            <option value="50mm">50mm Lens</option>
-            <option value="85mm">85mm Lens</option>
-            <option value="105mm">105mm Lens</option>
-            <option value="135mm">135mm Lens</option>
-        </select>
-    </div>
-    <div class="col-md-6">
-        <h2>F Stop</h2>
-        <select id="f_stop" class="form-control mb-3">
-            <option value=""></option>
-            <option value="f/1.4">f/1.4</option>
-            <option value="f/2">f/2</option>
-            <option value="f/2.8">f/2.8</option>
-            <option value="f/4">f/4</option>
-            <option value="f/5.6">f/5.6</option>
-            <option value="f/8">f/8</option>
-            <option value="f/11">f/11</option>
-            <option value="f/16">f/16</option>
-            <option value="f/22">f/22</option>
-            <option value="f/32">f/32</option>
-        </select>
-    </div>
-    <div class="col-md-6">
-        <h2>Filters and Effects 1</h2>
-        <select id="filters_and_effects_1" class="form-control mb-3">
-            <option value=""></option>
-            <option value="hologram effect">hologram effect</option>
-            <option value="infrared filter">infrared filter</option>
-            <option value="lens flare">lens flare</option>
-            <option value="sepia tone">sepia tone</option>
-            <option value="soft focus">soft focus</option>
-            <option value="solarized">solarized</option>
-            <option value="long exposure">long exposure</option>
-            <option value="ND filter">ND filter</option>
-            <option value="overexposed">overexposed</option>
-            <option value="technicolor">technicolor</option>
-            <option value="underexposed">underexposed</option>
-            <option value="vignette">vignette</option>
-        </select>
-    </div>
-    <div class="col-md-6">
-        <h2>Filters and Effects 2</h2>
-        <select id="filters_and_effects_2" class="form-control mb-3">
-            <option value=""></option>
-            <option value="hologram effect">hologram effect</option>
-            <option value="infrared filter">infrared filter</option>
-            <option value="lens flare">lens flare</option>
-            <option value="sepia tone">sepia tone</option>
-            <option value="soft focus">soft focus</option>
-            <option value="solarized">solarized</option>
-            <option value="long exposure">long exposure</option>
-            <option value="ND filter">ND filter</option>
-            <option value="overexposed">overexposed</option>
-            <option value="technicolor">technicolor</option>
-            <option value="underexposed">underexposed</option>
-            <option value="vignette">vignette</option>
+                    <optgroup label="Retro Cameras">
+                        <option value="Diana F+">Diana F+</option>
+                        <option value="Hasselblad 500CM">Hasselblad 500CM</option>
+                        <option value="HOLGA 120n">HOLGA 120n</option>
+                        <option value="Kodak Brownie">Kodak Brownie</option>
+                        <option value="Kodak Funsaver">Kodak Funsaver</option>
+                        <option value="Leica M3">Leica M3</option>
+                        <option value="Rolleiflex">Rolleiflex</option>
+                        <option value="Polaroid SX-70">Polaroid SX-70</option>
+                    </optgroup>
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Lens</h2>
+                <select id="lenses" class="form-control">
+                    <option value=""></option>
+                    <option value="8mm Fisheye Lens">8mm Fisheye Lens</option>
+                    <option value="14mm">14mm Lens</option>
+                    <option value="18mm">18mm Lens</option>
+                    <option value="24mm">24mm Lens</option>
+                    <option value="28mm">28mm Lens</option>
+                    <option value="35mm">35mm Lens</option>
+                    <option value="50mm">50mm Lens</option>
+                    <option value="85mm">85mm Lens</option>
+                    <option value="105mm">105mm Lens</option>
+                    <option value="135mm">135mm Lens</option>
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>F Stop</h2>
+                <select id="f_stop" class="form-control">
+                    <option value=""></option>
+                    <option value="f/1.4">f/1.4</option>
+                    <option value="f/2">f/2</option>
+                    <option value="f/2.8">f/2.8</option>
+                    <option value="f/4">f/4</option>
+                    <option value="f/5.6">f/5.6</option>
+                    <option value="f/8">f/8</option>
+                    <option value="f/11">f/11</option>
+                    <option value="f/16">f/16</option>
+                    <option value="f/22">f/22</option>
+                    <option value="f/32">f/32</option>
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Filters and Effects 1</h2>
+                <select id="filters_and_effects_1" class="form-control">
+                    <option value=""></option>
+                    <option value="hologram effect">hologram effect</option>
+                    <option value="infrared filter">infrared filter</option>
+                    <option value="lens flare">lens flare</option>
+                    <option value="sepia tone">sepia tone</option>
+                    <option value="soft focus">soft focus</option>
+                    <option value="solarized">solarized</option>
+                    <option value="long exposure">long exposure</option>
+                    <option value="ND filter">ND filter</option>
+                    <option value="overexposed">overexposed</option>
+                    <option value="technicolor">technicolor</option>
+                    <option value="underexposed">underexposed</option>
+                    <option value="vignette">vignette</option>
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Filters and Effects 2</h2>
+                <select id="filters_and_effects_2" class="form-control">
+                    <option value=""></option>
+                    <option value="hologram effect">hologram effect</option>
+                    <option value="infrared filter">infrared filter</option>
+                    <option value="lens flare">lens flare</option>
+                    <option value="sepia tone">sepia tone</option>
+                    <option value="soft focus">soft focus</option>
+                    <option value="solarized">solarized</option>
+                    <option value="long exposure">long exposure</option>
+                    <option value="ND filter">ND filter</option>
+                    <option value="overexposed">overexposed</option>
+                    <option value="technicolor">technicolor</option>
+                    <option value="underexposed">underexposed</option>
+                    <option value="vignette">vignette</option>
 
-        </select>
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Filters and Effects 3</h2>
+                <select id="filters_and_effects_3" class="form-control">
+                    <option value=""></option>
+                    <option value="hologram effect">hologram effect</option>
+                    <option value="infrared filter">infrared filter</option>
+                    <option value="lens flare">lens flare</option>
+                    <option value="sepia tone">sepia tone</option>
+                    <option value="soft focus">soft focus</option>
+                    <option value="solarized">solarized</option>
+                    <option value="long exposure">long exposure</option>
+                    <option value="ND filter">ND filter</option>
+                    <option value="overexposed">overexposed</option>
+                    <option value="technicolor">technicolor</option>
+                    <option value="underexposed">underexposed</option>
+                    <option value="vignette">vignette</option>
+                </select>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h2>Photographer</h2>
+                <select id="photographer" class="form-control">
+                    <option value=""></option>
+                    <optgroup label="Photographers">
+                        <option value="Alberto Seveso">Alberto Seveso</option>
+                        <option value="Alex Timmermans">Alex Timmermans</option>
+                        <option value="Alfred Stieglitz">Alfred Stieglitz</option>
+                        <option value="Ando Fuchs">Ando Fuchs</option>
+                        <option value="August Sander">August Sander</option>
+                        <option value="Brandon Woelfel">Brandon Woelfel</option>
+                        <option value="Chris Friel">Chris Friel</option>
+                        <option value="David LaChapelle">David LaChapelle</option>
+                        <option value="Eugene Atget">Eugene Atget</option>
+                        <option value="Garry Winograd">Garry Winograd</option>
+                        <option value="George Hurrell">George Hurrell</option>
+                        <option value="Germaine Krull">Germaine Krull</option>
+                        <option value="Hans Bellmer">Hans Bellmer</option>
+                        <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+                        <option value="James Bidgood">James Bidgood</option>
+                        <option value="Kim Keever">Kim Keever</option>
+                        <option value="Lee Friedlander">Lee Friedlander</option>
+                        <option value="Liam Wong">Liam Wong</option>
+                        <option value="Lotte Reiniger">Lotte Reiniger</option>
+                        <option value="Martin Schoeller">Martin Schoeller</option>
+                        <option value="Mickalene Thomas">Mickalene Thomas</option>
+                        <option value="Miko Lagerstedt">Miko Lagerstedt</option>
+                        <option value="Miles Aldridge">Miles Aldridge</option>
+                        <option value="Misha Gordin">Misha Gordin</option>
+                        <option value="Nan Goldin">Nan Goldin</option>
+                        <option value="Nathan Wirth">Nathan Wirth</option>
+                        <option value="Nick Knight">Nick Knight</option>
+                        <option value="Oleg Oprisco">Oleg Oprisco</option>
+                        <option value="Oskar Fischinger">Oskar Fischinger</option>
+                        <option value="Paolo Roversi">Paolo Roversi</option>
+                        <option value="Paul Barson">Paul Barson</option>
+                        <option value="Richard Avedon">Richard Avedon</option>
+                        <option value="Tim Walker">Tim Walker</option>
+                        <option value="Tyler Shields">Tyler Shields</option>
+                        <option value="Walker Evans">Walker Evans</option>
+                        <option value="Yousuf Karsh">Yousuf Karsh</option>
+                        <option value="Ansel Adams">Ansel Adams</option>
+                        <option value="Dorothea Lange">Dorothea Lange</option>
+                        <option value="Robert Capa">Robert Capa</option>
+                        <option value="Henri Cartier-Bresson">Henri Cartier-Bresson</option>
+                        <option value="Cindy Sherman">Cindy Sherman</option>
+                        <option value="Richard Avedon">Richard Avedon</option>
+                        <option value="Vivian Maier">Vivian Maier</option>
+                        <option value="Diane Arbus">Diane Arbus</option>
+                        <option value="Helmut Newton">Helmut Newton</option>
+                        <option value="Irving Penn">Irving Penn</option>
+                        <option value="Mario Testino">Mario Testino</option>
+                        <option value="Sally Mann">Sally Mann</option>
+                        <option value="Elliott Erwitt">Elliott Erwitt</option>
+                        <option value="Steve McCurry">Steve McCurry</option>
+                        <option value="Sebastião Salgado">Sebastião Salgado</option>
+                        <option value="Andreas Gursky">Andreas Gursky</option>
+                        <option value="Robert Mapplethorpe">Robert Mapplethorpe</option>
+                        <option value="Gregory Crewdson">Gregory Crewdson</option>
+                        <option value="Gordon Parks">Gordon Parks</option>
+                        <option value="Mary Ellen Mark">Mary Ellen Mark</option>
+                    </optgroup>
+
+                    <optgroup label="Film Directors">
+                        <option value="Steven Spielberg">Steven Spielberg</option>
+                        <option value="Martin Scorsese">Martin Scorsese</option>
+                        <option value="Christopher Nolan">Christopher Nolan</option>
+                        <option value="Quentin Tarantino">Quentin Tarantino</option>
+                        <option value="Stanley Kubrick">Stanley Kubrick</option>
+                        <option value="Alfred Hitchcock">Alfred Hitchcock</option>
+                        <option value="Francis Ford Coppola">Francis Ford Coppola</option>
+                        <option value="Ridley Scott">Ridley Scott</option>
+                        <option value="David Fincher">David Fincher</option>
+                        <option value="Wes Anderson">Wes Anderson</option>
+                        <option value="Akira Kurosawa">Akira Kurosawa</option>
+                        <option value="James Cameron">James Cameron</option>
+                        <option value="George Lucas">George Lucas</option>
+                        <option value="Sergio Leone">Sergio Leone</option>
+                        <option value="Peter Jackson">Peter Jackson</option>
+                        <option value="Tim Burton">Tim Burton</option>
+                        <option value="Clint Eastwood">Clint Eastwood</option>
+                        <option value="Roman Polanski">Roman Polanski</option>
+                        <option value="Guillermo del Toro">Guillermo del Toro</option>
+                        <option value="Danny Boyle">Danny Boyle</option>
+                    </optgroup>
+                </select>
+            </div>
+            
+            <div class="row mt-3">
+                <div class="col-12">
+                    <button onclick="generatePrompt()" class="btn btn-primary mb-3">Generate Prompt</button>
+                    <textarea id="promptOutput" class="form-control"></textarea>
+                </div>
+                <button onclick="copyToClipboard()" class="btn btn-secondary mb-3 ml-2">Copy Prompt</button>
+
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-        <h2>Filters and Effects 3</h2>
-        <select id="filters_and_effects_3" class="form-control mb-3">
-            <option value=""></option>
-            <option value="hologram effect">hologram effect</option>
-            <option value="infrared filter">infrared filter</option>
-            <option value="lens flare">lens flare</option>
-            <option value="sepia tone">sepia tone</option>
-            <option value="soft focus">soft focus</option>
-            <option value="solarized">solarized</option>
-            <option value="long exposure">long exposure</option>
-            <option value="ND filter">ND filter</option>
-            <option value="overexposed">overexposed</option>
-            <option value="technicolor">technicolor</option>
-            <option value="underexposed">underexposed</option>
-            <option value="vignette">vignette</option>
-        </select>
-    </div>
-    <div class="col-md-6">
-        <h2>Photographer</h2>
-        <select id="photographer" class="form-control mb-3">
-            <option value=""></option>
-            <optgroup label="Photographers">
-                <option value="Alberto Seveso">Alberto Seveso</option>
-                <option value="Alex Timmermans">Alex Timmermans</option>
-                <option value="Alfred Stieglitz">Alfred Stieglitz</option>
-                <option value="Ando Fuchs">Ando Fuchs</option>
-                <option value="August Sander">August Sander</option>
-                <option value="Brandon Woelfel">Brandon Woelfel</option>
-                <option value="Chris Friel">Chris Friel</option>
-                <option value="David LaChapelle">David LaChapelle</option>
-                <option value="Eugene Atget">Eugene Atget</option>
-                <option value="Garry Winograd">Garry Winograd</option>
-                <option value="George Hurrell">George Hurrell</option>
-                <option value="Germaine Krull">Germaine Krull</option>
-                <option value="Hans Bellmer">Hans Bellmer</option>
-                <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-                <option value="James Bidgood">James Bidgood</option>
-                <option value="Kim Keever">Kim Keever</option>
-                <option value="Lee Friedlander">Lee Friedlander</option>
-                <option value="Liam Wong">Liam Wong</option>
-                <option value="Lotte Reiniger">Lotte Reiniger</option>
-                <option value="Martin Schoeller">Martin Schoeller</option>
-                <option value="Mickalene Thomas">Mickalene Thomas</option>
-                <option value="Miko Lagerstedt">Miko Lagerstedt</option>
-                <option value="Miles Aldridge">Miles Aldridge</option>
-                <option value="Misha Gordin">Misha Gordin</option>
-                <option value="Nan Goldin">Nan Goldin</option>
-                <option value="Nathan Wirth">Nathan Wirth</option>
-                <option value="Nick Knight">Nick Knight</option>
-                <option value="Oleg Oprisco">Oleg Oprisco</option>
-                <option value="Oskar Fischinger">Oskar Fischinger</option>
-                <option value="Paolo Roversi">Paolo Roversi</option>
-                <option value="Paul Barson">Paul Barson</option>
-                <option value="Richard Avedon">Richard Avedon</option>
-                <option value="Tim Walker">Tim Walker</option>
-                <option value="Tyler Shields">Tyler Shields</option>
-                <option value="Walker Evans">Walker Evans</option>
-                <option value="Yousuf Karsh">Yousuf Karsh</option>
-                <option value="Ansel Adams">Ansel Adams</option>
-                <option value="Dorothea Lange">Dorothea Lange</option>
-                <option value="Robert Capa">Robert Capa</option>
-                <option value="Henri Cartier-Bresson">Henri Cartier-Bresson</option>
-                <option value="Cindy Sherman">Cindy Sherman</option>
-                <option value="Richard Avedon">Richard Avedon</option>
-                <option value="Vivian Maier">Vivian Maier</option>
-                <option value="Diane Arbus">Diane Arbus</option>
-                <option value="Helmut Newton">Helmut Newton</option>
-                <option value="Irving Penn">Irving Penn</option>
-                <option value="Mario Testino">Mario Testino</option>
-                <option value="Sally Mann">Sally Mann</option>
-                <option value="Elliott Erwitt">Elliott Erwitt</option>
-                <option value="Steve McCurry">Steve McCurry</option>
-                <option value="Sebastião Salgado">Sebastião Salgado</option>
-                <option value="Andreas Gursky">Andreas Gursky</option>
-                <option value="Robert Mapplethorpe">Robert Mapplethorpe</option>
-                <option value="Gregory Crewdson">Gregory Crewdson</option>
-                <option value="Gordon Parks">Gordon Parks</option>
-                <option value="Mary Ellen Mark">Mary Ellen Mark</option>
-            </optgroup>
-
-            <optgroup label="Film Directors">
-                <option value="Steven Spielberg">Steven Spielberg</option>
-                <option value="Martin Scorsese">Martin Scorsese</option>
-                <option value="Christopher Nolan">Christopher Nolan</option>
-                <option value="Quentin Tarantino">Quentin Tarantino</option>
-                <option value="Stanley Kubrick">Stanley Kubrick</option>
-                <option value="Alfred Hitchcock">Alfred Hitchcock</option>
-                <option value="Francis Ford Coppola">Francis Ford Coppola</option>
-                <option value="Ridley Scott">Ridley Scott</option>
-                <option value="David Fincher">David Fincher</option>
-                <option value="Wes Anderson">Wes Anderson</option>
-                <option value="Akira Kurosawa">Akira Kurosawa</option>
-                <option value="James Cameron">James Cameron</option>
-                <option value="George Lucas">George Lucas</option>
-                <option value="Sergio Leone">Sergio Leone</option>
-                <option value="Peter Jackson">Peter Jackson</option>
-                <option value="Tim Burton">Tim Burton</option>
-                <option value="Clint Eastwood">Clint Eastwood</option>
-                <option value="Roman Polanski">Roman Polanski</option>
-                <option value="Guillermo del Toro">Guillermo del Toro</option>
-                <option value="Danny Boyle">Danny Boyle</option>
-            </optgroup>
-
-        </select>
-    </div>
-
-
-        <button onclick="generatePrompt()" class="btn btn-primary mb-3">Generate Prompt</button>
-        <textarea id="promptOutput" class="form-control"></textarea>
-    </div>
-    <script src="static/script.js"></script>
-</body>
-
-</html>
+        <script src="static/script.js"></script>
+    </body>
+    
+    </html>

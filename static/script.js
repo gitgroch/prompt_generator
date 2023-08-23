@@ -48,3 +48,11 @@ function generatePrompt() {
         document.getElementById("promptOutput").innerText = data.prompt;
     });
 }
+
+function copyToClipboard() {
+    const textarea = document.getElementById('promptOutput');
+    textarea.select();
+    document.execCommand('copy');
+    alert('Prompt copied to clipboard!');
+}
+
