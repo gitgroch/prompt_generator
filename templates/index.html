@@ -19,13 +19,15 @@
 <body>
     <div class="container mt-5 ">
         <div class="row">
-            <h1 class="text-center fs-1 ">PromptGeek's AI Art Prompt Generator</h1>
+            <h1 class="text-center fs-1 ">PromptGeek's Photo Realistic SD Prompt Generator</h1>
             <div class="col-md-4 mb-3 ">
                 <h2 class="fs-4">Info:</h2>
                 <p class="fs-6">This prompt generator is based on PromptGeeks ebook "Creating Photorealistic Images With
                     AI". This is a silly little project, but his book is not silly at all, please check it out and
                     support PromptGeek for his incredible work. </p>
-                <p class="fs-6"> I made this with help from chatGPT (but not the CSS, AI sucks at CSS) for a YouTube video, you can check that out <a href="https://www.youtube.com/channel/UCw1mnmCAq2rWLAWn7CrNO5g">here.</a>
+                <p class="fs-6"> I made this with help from chatGPT (but not the CSS, AI sucks at CSS) for a YouTube
+                    video, you can check that out <a
+                        href="https://www.youtube.com/channel/UCw1mnmCAq2rWLAWn7CrNO5g">here.</a>
 
                 </p>
             </div>
@@ -34,28 +36,60 @@
                 <p>1. Select an option for each field provided, or don't, it's up to you</p>
                 <p>2. Click Generate Prompt</p>
                 <p>3. Copy the prompt into your chosen art generator</p>
+                <p>Note: The randomise prompt button will only randomise the drop down menu selections, you still need to enter text for subject etc.</p>
             </div>
             <div class="col-md-4 mb-3 ">
                 <h2>Links:</h2>
                 <p>
-                    <a href="https://promptgeek.gumroad.com/l/photoreal?layout=profile">Get PromptGeek's Book on
+                    <a href="https://promptgeek.gumroad.com/l/photoreal?layout=profile" target="_blank">Get PromptGeek's
+                        Book on
                         Gumroad</a>
                 </p>
                 <p>
-                    <a href="https://youtu.be/z-AoELaJfn0?si=Dx92AXU7i1rNrntD">See PromptGeek's Video Tutorial</a>
+                    <a href="https://youtu.be/z-AoELaJfn0?si=Dx92AXU7i1rNrntD" target="_blank">See PromptGeek's Video
+                        Tutorial</a>
                 </p>
                 <p>
-                    <a href="https://www.youtube.com/channel/UCw1mnmCAq2rWLAWn7CrNO5g">Check out my YouTube Channel -
+                    <a href="https://www.youtube.com/channel/UCw1mnmCAq2rWLAWn7CrNO5g" target="_blank">Check out my
+                        YouTube Channel -
                         Incite AI</a>
                 </p>
 
             </div>
         </div>
     </div>
-    
+
     <div class="container mt-5">
 
         <div class="row">
+            <div class="col-md-4 mb-3">
+                <h2>Style of Photo</h2>
+                <select id="style_of_photo" class="form-control">
+                    <!-- Populate with options from your database or list -->
+                    <option value=""></option>
+                    <option value="abstract">Abstract</option>
+                    <option value="analogue">Analogue</option>
+                    <option value="beauty">Beauty</option>
+                    <option value="candid">Candid</option>
+                    <option value="documentary photography">Documentary Photography</option>
+                    <option value="glamour photography">Glamour Photography</option>
+                    <option value="high fashion photography">High Fashion Photography</option>
+                    <option value="instant">Instant Photo</option>
+                    <option value="large format">Large Format</option>
+                    <option value="lifestyle photography">Lifestyle Photography</option>
+                    <option value="modernist">Modernist</option>
+                    <option value="paparazzi">Paparazzi</option>
+                    <option value="pictorialist style">Pictorialist Style</option>
+                    <option value="polaroid">Polaroid</option>
+                    <option value="pinhole photography">Pinhole Photography</option>
+                    <option value="street fashion photography">Street Fashion Photography</option>
+                    <option value="surrealist">Surrealist</option>
+                    <option value="tintype">Tintype</option>
+                    <option value="street photography">Street Photography</option>
+
+                    <!-- ... other options ... -->
+                </select>
+            </div>
 
             <div class="col-md-4 mb-3">
                 <h2>Subject</h2>
@@ -401,6 +435,7 @@
                     <button onclick="generatePrompt()" class="btn btn-primary mb-3">Generate Prompt</button>
                     <textarea id="promptOutput" class="form-control"></textarea>
                     <button onclick="copyToClipboard()" class="btn btn-secondary mb-3 ml-2">Copy Prompt</button>
+                    <button id="randomizePrompt" class="btn btn-secondary mb-3 ml-2">Randomize Prompt</button>
                 </div>
 
 

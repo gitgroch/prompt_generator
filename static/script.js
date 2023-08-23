@@ -48,8 +48,21 @@ function generatePrompt() {
     .then(response => response.json())
     .then(data => {
         document.getElementById("promptOutput").innerText = data.prompt;
-    });
+    });  
 }
+
+document.getElementById('randomizePrompt').addEventListener('click', function() {
+    // For each select element, choose a random option
+    const selects = document.querySelectorAll('select');
+    selects.forEach(select => {
+        const options = select.options;
+        const randomIndex = Math.floor(Math.random() * options.length);
+        select.selectedIndex = randomIndex;
+    });
+
+    // Now generate the prompt using the randomized selections
+    generatePrompt();
+});
 
 function copyToClipboard() {
     const textarea = document.getElementById('promptOutput');
@@ -57,4 +70,6 @@ function copyToClipboard() {
     document.execCommand('copy');
     alert('Prompt copied to clipboard!');
 }
+
+
 
