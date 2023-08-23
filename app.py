@@ -10,9 +10,28 @@ def index():
 def generate_prompt():
     data = request.json
 
-    prompt = f"{data['style_of_photo']} photo of a {data['subject']}, {data['important_feature']}, {data['more_details']}, {data['pose_or_action']}, {data['framing']}, {data['setting_background']}, {data['lighting']}, {data['camera_angle']}, {data['camera_properties']}, in style of {data['photographer']}"
+    # Constructing the prompt using list comprehension
+    prompt_parts = [
+        f"{data['style_of_photo']} photo of a {data['subject']}",
+        data['important_feature'],
+        data['more_details'],
+        data['pose_or_action'],
+        data['framing'],
+        data['setting_background'],
+        data['lighting'],
+        data['camera_angle'],
+        data['camera'],
+        f"{data['lenses']} {data['f_stop']}",
+        data['filters_and_effects_1'],
+        data['filters_and_effects_2'],
+        data['filters_and_effects_3'],
+        f"in style of {data['photographer']}"
+    ]
 
-    return jsonify({"prompt": prompt})
+    # Joining the parts with a comma, but only if they are not blank
+    prompt = ', '.join([part for part in prompt_parts if part])
+
+    return jsonify({'prompt': prompt})
 
 if __name__ == '__main__':
     app.run(debug=True)

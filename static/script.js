@@ -1,5 +1,5 @@
 function generatePrompt() {
-    // Fetching values from each dropdown
+    // Fetching values from each dropdown and textarea
     const style_of_photo = document.getElementById("style_of_photo").value;
     const subject = document.getElementById("subject").value;
     const important_feature = document.getElementById("important_feature").value;
@@ -9,7 +9,12 @@ function generatePrompt() {
     const setting_background = document.getElementById("setting_background").value;
     const lighting = document.getElementById("lighting").value;
     const camera_angle = document.getElementById("camera_angle").value;
-    const camera_properties = document.getElementById("camera_properties").value;
+    const camera = document.getElementById("camera").value;
+    const lenses = document.getElementById("lenses").value;
+    const f_stop = document.getElementById("f_stop").value;
+    const filters_and_effects_1 = document.getElementById("filters_and_effects_1").value;
+    const filters_and_effects_2 = document.getElementById("filters_and_effects_2").value;
+    const filters_and_effects_3 = document.getElementById("filters_and_effects_3").value;
     const photographer = document.getElementById("photographer").value;
 
     const data = {
@@ -22,7 +27,12 @@ function generatePrompt() {
         setting_background: setting_background,
         lighting: lighting,
         camera_angle: camera_angle,
-        camera_properties: camera_properties,
+        camera: camera,
+        lenses: lenses,
+        f_stop: f_stop,
+        filters_and_effects_1: filters_and_effects_1,
+        filters_and_effects_2: filters_and_effects_2,
+        filters_and_effects_3: filters_and_effects_3,
         photographer: photographer
     };
 
